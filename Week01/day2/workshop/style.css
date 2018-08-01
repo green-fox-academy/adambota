@@ -1,0 +1,39 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    background-color: #333333;
+    height: 50px;
+}
+li {
+    display: inline;
+    color: #ff0099;
+    align-items: center;
+}
+a{
+    color: #ff0099;
+}
+body{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: consolas, courier;
+    background-image: url("topography.png")
+}
+h1, h2{
+    font-family: 'Kirang Haerang', cursive;
+}
+#wiki{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+#subtitle{
+    color: #ff0099;
+}
+#divider{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
