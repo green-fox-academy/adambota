@@ -7,3 +7,6 @@ Links to other exercises done on own profile:
 [hello-world](https://github.com/adambota/hello-world)
 
 [git-lesson-repository](https://github.com/adambota/git-lesson-repository)
+
+[Syllabus](https://github.com/green-fox-academy/badboi-syllabus)
+
