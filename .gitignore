@@ -1,0 +1,17 @@
+.idea/**/workspace.xml
+
+.idea/**/misc.xml
+
+.idea/**/modules.xml
+
+.idea/**/project-template.xml
+
+.idea/**/description.html
+
+
+
+out/
+
+
+
+*.iml
