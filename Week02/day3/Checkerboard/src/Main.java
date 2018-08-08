@@ -8,11 +8,18 @@ public class Main {
     public static void mainDraw(Graphics graphics) {
         // Fill the canvas with a checkerboard pattern.
         graphics.setColor(Color.black);
+        int lineNumb = 1;
         for (int i = 0; i < 300; i += 20) {
             for (int j = 0; j < 300; j += 40) {
-                graphics.drawRect(j, i, 20, 20);
-                graphics.fillRect(j + 20, i, 20, 20);
+                if (lineNumb % 2 == 0) {
+                    graphics.drawRect(j, i, 20, 20);
+                    graphics.fillRect(j + 20, i, 20, 20);
+                } else {
+                    graphics.fillRect(j, i, 20, 20);
+                    graphics.drawRect(j + 20, i, 20, 20);
+                }
             }
+            lineNumb++;
         }
     }
 
