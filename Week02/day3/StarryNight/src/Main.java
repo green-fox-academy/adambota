@@ -14,7 +14,7 @@ public class Main {
         //  - The stars should have random color (some shade of grey)
         graphics.setColor(Color.black);
         graphics.fillRect(0, 0, WIDTH, HEIGHT);
-        Color[] colors = {new Color(105, 105, 105), new Color(58, 58, 58), new Color(148, 148, 148)};
+        Color[] colors = {new Color(105, 105, 105), new Color(112, 128, 144), new Color(148, 148, 148)};
         for (int i = 0; i < 30; i++) {
             int randX = (int) (Math.random() * (WIDTH - 10));
             int randY = (int) (Math.random() * (HEIGHT - 10));
