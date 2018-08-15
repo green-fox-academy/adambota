@@ -8,9 +8,13 @@ public class Dominoes {
         // You have the list of Dominoes
         // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
         // eg: [2, 4], [4, 3], [3, 5] ...
-        Collections.swap(dominoes, 1, 4);
-        Collections.swap(dominoes, 2, 4);
-        Collections.swap(dominoes, 5, 4);
+        for (int i = 0; i < 5; i++) {
+            for (int j = i + 1; j < 6; j++) {
+                if (dominoes.get(i).getValues()[1] == dominoes.get(j).getValues()[0]) {
+                    Collections.swap(dominoes, i + 1, j);
+                }
+            }
+        }
         System.out.println(dominoes);
     }
 
