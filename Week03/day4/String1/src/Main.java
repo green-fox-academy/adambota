@@ -8,9 +8,7 @@ public class Main {
 
     public static String changeXToY(String s) {
         String changed = "";
-        if (s.length() == 0) {
-            return "";
-        } else if (s.length() == 1 && s.charAt(0) == 'x') {
+        if (s.length() == 1 && s.charAt(0) == 'x') {
             changed += 'y';
             return changed;
         } else if (s.length() == 1) {
