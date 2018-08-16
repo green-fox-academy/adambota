@@ -2,14 +2,12 @@ public class Main {
 
     public static void main(String[] args) {
         // Given a string, compute recursively a new string where all the 'x' chars have been removed.
-        System.out.println(changeXToY("xyxasdxyxyxkekxy"));
+        System.out.println(changeXToY("xyxasdxyxyxkekxyx"));
     }
 
     public static String changeXToY(String s) {
         String changed = "";
-        if (s.length() == 0) {
-            return "";
-        } else if (s.length() == 1 && s.charAt(0) == 'x') {
+        if (s.length() == 1 && s.charAt(0) == 'x') {
             return changed;
         } else if (s.length() == 1) {
             changed += s.charAt(0);
