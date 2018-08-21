@@ -1,23 +1,23 @@
-public class Person {
+class Person {
     String name;
     int age;
     String gender;
 
-    public void introduce() {
+    void introduce() {
         System.out.println("Hi, I'm " + name + " , a " + age + " year old " + gender);
     }
 
-    public void getGoal() {
+    void getGoal() {
         System.out.println("My goal is: Live for the moment!");
     }
 
-    public Person(String name, int age, String gender) {
+    Person(String name, int age, String gender) {
         this.name = name;
         this.age = age;
         this.gender = gender;
     }
 
-    public Person() {
+    Person() {
         this.name = "Jane Doe";
         this.age = 30;
         this.gender = "female";
