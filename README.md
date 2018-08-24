@@ -2,6 +2,8 @@
 
 Links to other exercises done on own profile:
 
+[todo-app](https://github.com/adambota/todo-app)
+
 [patchwork](https://github.com/adambota/patchwork)
 
 [git-lesson-repository](https://github.com/adambota/git-lesson-repository)
