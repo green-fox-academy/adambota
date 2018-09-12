@@ -1,0 +1,80 @@
+body {
+    background-color: rgb(238, 238, 238);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#top-text{
+    font-size: 20px;
+    padding-left: 12%;
+}
+
+form {
+    /* Just to center the form on the page */
+    margin: 0 auto;
+    width: 400px;
+    /* To see the outline of the form */
+    padding: 1em;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+  }
+  
+  form div + div {
+    margin-top: 1em;
+    margin-left: 12%;
+    width: 50%;
+  }
+  
+  label {
+    /* To make sure that all labels have the same size and are properly aligned */
+	border:none;
+	display:block;
+	font-size: 10px;
+	padding:0 0 1px;
+    }
+  
+  input, textarea {
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+    font: 1em;
+  
+    /* To give the same size to all text fields */
+    width: 300px;
+    height: 40px;
+    box-sizing: border-box;
+    /* To harmonize the look & feel of text field border */
+    border: 1px solid #999;
+  }
+  
+  input:focus, textarea:focus {
+    /* To give a little highlight on active elements */
+    outline: none !important;
+    border-color: green;
+    box-shadow: 0 0 1px green;
+  }
+  
+  textarea {
+    /* To properly align multiline text fields with their labels */
+    vertical-align: top;
+  
+    /* To give enough room to type some text */
+    height: 5em;
+  }
+  
+  button {
+    /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
+    margin-left: 0;
+    border-radius: 28px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    border: 0px;
+  }
+
+  #forgot {
+      padding-left: 220px;
+      font-size: 10px;
+  }
