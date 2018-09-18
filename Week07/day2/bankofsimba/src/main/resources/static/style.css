@@ -13,3 +13,7 @@ thead {
     background: #1b1e24;
     color: #e2e7ec;
 }
+
+table, th, td {
+    border: 1px solid black;
+}
