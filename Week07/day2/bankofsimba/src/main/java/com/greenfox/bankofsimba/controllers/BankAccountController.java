@@ -3,7 +3,7 @@ package com.greenfox.bankofsimba.controllers;
 import com.greenfox.bankofsimba.models.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +11,13 @@ import java.util.List;
 @Controller
 public class BankAccountController {
 
-    @RequestMapping("/show")
+    @GetMapping("/show")
     public String showAccount(Model model) {
         model.addAttribute("account", new BankAccount("Simba", 2000, "lion", true, true));
         return "accounttemplate";
     }
 
-    @RequestMapping("/accountlist")
+    @GetMapping("/accountlist")
     public String showAccountList(Model model) {
         List<BankAccount> accountList = new ArrayList<>();
         accountList.add(new BankAccount("Simba", 2000, "Lion", true, true));
