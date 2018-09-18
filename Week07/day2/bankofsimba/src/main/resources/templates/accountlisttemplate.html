@@ -15,6 +15,7 @@
         <th>Balance</th>
         <th>Animal</th>
         <th>Is king</th>
+        <th>Is good</th>
     </tr>
     </thead>
     <tbody>
@@ -27,6 +28,14 @@
         <td>
             <span th:if="${element.king}">King</span>
             <span th:unless="${element.king}">Not king</span>
+        </td>
+        <td th:switch="${element.good}">
+            <span th:case="true">
+                Good guy
+            </span>
+            <span th:case="false">
+                Bad guy
+            </span>
         </td>
         </tr>
     </th:block>

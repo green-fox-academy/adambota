@@ -13,17 +13,18 @@ public class BankAccountController {
 
     @RequestMapping("/show")
     public String showAccount(Model model) {
-        model.addAttribute("account", new BankAccount("Simba", 2000, "lion", true));
+        model.addAttribute("account", new BankAccount("Simba", 2000, "lion", true, true));
         return "accounttemplate";
     }
 
     @RequestMapping("/accountlist")
     public String showAccountList(Model model) {
         List<BankAccount> accountList = new ArrayList<>();
-        accountList.add(new BankAccount("Simba", 2000, "Lion", true));
-        accountList.add(new BankAccount("Pumba", 20, "Warthog", false));
-        accountList.add(new BankAccount("Timon", 500, "Meerkat", false));
-        accountList.add(new BankAccount("Zazu", 1000, "Hornbill", false));
+        accountList.add(new BankAccount("Simba", 2000, "Lion", true, true));
+        accountList.add(new BankAccount("Pumba", 20, "Warthog", false, true));
+        accountList.add(new BankAccount("Timon", 500, "Meerkat", false, true));
+        accountList.add(new BankAccount("Zazu", 1000, "Hornbill", false, true));
+        accountList.add(new BankAccount("Scar", 2500, "Lion", false, false));
         model.addAttribute("accountList", accountList);
         return "accountlisttemplate";
     }
