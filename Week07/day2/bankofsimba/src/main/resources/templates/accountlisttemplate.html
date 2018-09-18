@@ -14,15 +14,20 @@
         <th>Name</th>
         <th>Balance</th>
         <th>Animal</th>
+        <th>Is king</th>
     </tr>
     </thead>
     <tbody>
     <th:block th:each="element : ${accountList}">
-        <tr>
+        <tr th:class="${element.king} ? king : notking">
         <td th:text="${accountList.indexOf(element)}"></td>
         <td th:text="${element.name}"></td>
         <td th:text="|${#numbers.formatDecimal(element.balance,1,2)} Peso|"></td>
         <td th:text="${element.animalType}"></td>
+        <td>
+            <span th:if="${element.king}">King</span>
+            <span th:unless="${element.king}">Not king</span>
+        </td>
         </tr>
     </th:block>
     </tbody>
