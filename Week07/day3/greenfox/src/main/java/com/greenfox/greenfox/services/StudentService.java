@@ -23,4 +23,8 @@ public class StudentService {
     public void save(String student) {
         names.add(student);
     }
+
+    public int count() {
+        return names.size();
+    }
 }

@@ -19,6 +19,7 @@ public class GreenfoxController {
     public String gfa(Model model) {
         model.addAttribute("list", "/gfa/list");
         model.addAttribute("add", "/gfa/add");
+        model.addAttribute("number", studentService.count());
         return "gfa";
     }
 
