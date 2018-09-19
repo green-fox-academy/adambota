@@ -6,8 +6,9 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <span>Saved new student</span>
+    <span th:if="${exists}">Student already exists</span>
+    <span th:unless="${exists}">Student doesn't exist</span>
     <br>
-    <a href="/gfa" target="_self">Return to main page</a>
+    <a href="/gfa/check" target="_self">Back to previous page</a>
 </body>
 </html>

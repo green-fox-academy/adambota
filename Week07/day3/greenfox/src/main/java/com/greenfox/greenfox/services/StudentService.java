@@ -27,4 +27,9 @@ public class StudentService {
     public int count() {
         return names.size();
     }
+
+    public boolean checkIfExists(String name) {
+        if (names.contains(name)) return true;
+        else return false;
+    }
 }
