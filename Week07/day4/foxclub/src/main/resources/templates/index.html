@@ -14,6 +14,7 @@
     <span th:text="|This is ${name}|"></span>
     <br>
     <span th:text="|Currently living on ${food} and ${drink}|"></span>
+    <a th:href="@{/nutritionstore?name=} + ${name}">To nutrition store</a>
     <br>
     <span th:text="|He knows ${trickCount} tricks|"></span>
     <h1>Known tricks</h1>
