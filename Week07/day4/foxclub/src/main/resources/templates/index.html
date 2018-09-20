@@ -12,9 +12,20 @@
     <img src="greenfox.png">
     <br>
     <span th:text="|This is ${name}|"></span>
+    <br>
+    <span th:text="|Currently living on ${food} and ${drink}|"></span>
+    <br>
+    <span th:text="|He knows ${trickCount} tricks|"></span>
     <h1>Known tricks</h1>
-    <ul>
-        <li>Write HTML</li>
-    </ul>
+    <th:block>
+        <span th:if="${trickCount == 0}">You know no tricks yet. Go and learn some!</span>
+        <div th:unless="${trickCount == 0}" th:each="trick : ${tricks}">
+            <ul>
+                <div th:each="trick : ${tricks}">
+                    <li th:text="${trick}"></li>
+                </div>
+            </ul>
+        </div>
+    </th:block>
 </body>
 </html>
