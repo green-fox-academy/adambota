@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <ul>
+        <li><a th:href="@{/?name=} + ${name}">Information</a></li>
+    </ul>
+    <form method="post" th:action="@{/trickcenter?name=} + ${name}">
+        <label for="trick">Trick</label>
+        <select name="trick" id="trick">
+            <option value="Write HTML">Write HTML</option>
+            <option value="Write JAVA">Write JAVA</option>
+            <option value="Play darts">Play darts</option>
+        </select>
+        <button type="submit">Learn</button>
+    </form>
+</body>
+</html>
