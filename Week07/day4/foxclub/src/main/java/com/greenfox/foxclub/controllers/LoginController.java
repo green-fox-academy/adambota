@@ -1,6 +1,5 @@
 package com.greenfox.foxclub.controllers;
 
-import com.greenfox.foxclub.services.FoxService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

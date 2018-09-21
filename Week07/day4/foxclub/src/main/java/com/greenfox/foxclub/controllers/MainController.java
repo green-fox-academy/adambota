@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-    public static final FoxService foxService = new FoxService();
+    static final FoxService foxService = new FoxService();
 
     //public MainController(FoxService foxService) {
     //    this.foxService = foxService;
     //}
+
 
     @GetMapping("/")
     public String index(String name, Model model) {
@@ -27,10 +28,5 @@ public class MainController {
         model.addAttribute("trickCount", fox.getTricks().size());
         model.addAttribute("tricks", fox.getTricks());
         return "index";
-    }
-
-    @GetMapping("/tonutrition")
-    public String toNutrition(String name) {
-        return "redirect:/nutritionstore?name=" + name;
     }
 }
