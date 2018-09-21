@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class FoxService {
-    private List<Fox> foxList;
+    private final List<Fox> foxList;
 
     public FoxService() {
         this.foxList = new ArrayList<>();
@@ -20,7 +20,7 @@ public class FoxService {
 
     public Fox getFox(String name) {
         if (foxList.size() > 0) {
-            for (int i = 0; i <= foxList.size() -1; i++) {
+            for (int i = 0; i <= foxList.size() - 1; i++) {
                 if (foxList.get(i).getName().equals(name)) return foxList.get(i);
             }
         }
