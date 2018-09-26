@@ -3,12 +3,12 @@ body {
 }
 
 thead {
-    background: #1b1e24;
-    color: #e2e7ec;
+    background: #EEEEEE;
+    color: #333333;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #ccccb3;
     text-align: center;
     font-size: 16px;
     vertical-align: middle !important;

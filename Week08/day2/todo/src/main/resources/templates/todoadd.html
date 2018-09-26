@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Thymeleaf Exercise</title>
+    <title>Add new todo</title>
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <meta charset="utf-8"/>
 </head>
 <body>
-<div class="container-fluid">
-    <h1>Add new todo</h1>
+<div class="container">
+    <h1 class="jumbotron">Add new todo</h1>
     <form method="post" action="/todo/add">
         <input type="text" name="title" placeholder="Title" required>
         <br>

@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Thymeleaf Exercise</title>
-    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <title>Edit todo</title>
     <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <meta charset="utf-8"/>
 </head>
 <body>
-<div class="container-fluid">
-    <h1>Edit Todo</h1>
-    <form method="post" action="/todo/add" th:action="@{'/' + ${id} + '/edit'}">
-        <input type="text" name="title" th:value="${title}" required>
+<div class="container">
+    <h1 class="jumbotron">Edit Todo</h1>
+    <form method="post" class="form-horizontal" action="/todo/add" th:action="@{'/' + ${id} + '/edit'}">
+        <div class="form-group">
+            <input type="text" name="title" th:value="${title}" required>
+        </div>
         <br>
-        <label for="urgent">Urgent</label>
-        <input type="checkbox" name="urgent" id="urgent" th:checked="${urgent}">
+        <div class="form-group">
+            <label class="control-label" for="urgent">Urgent</label>
+            <input type="checkbox" name="urgent" id="urgent" th:checked="${urgent}">
+        </div>
         <br>
-        <label for="done">Done</label>
-        <input type="checkbox" name="done" id="done" th:checked="${done}">
+        <div class="form-group">
+            <label class="control-label" for="done">Done</label>
+            <input type="checkbox" name="done" id="done" th:checked="${done}">
+        </div>
         <br>
-        <input type="submit" value="Edit">
-        <a href="/todo">Cancel</a>
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Edit">
+            <a href="/todo" role="button" class="btn btn-info">Cancel</a>
+        </div>
     </form>
-    <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
-    <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </div>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
