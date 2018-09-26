@@ -38,7 +38,7 @@ public class TodoController {
 
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable Long id) {
-        todoRepository.deleteById(id);
+        if (todoRepository.findById(id).isPresent()) todoRepository.deleteById(id);
         return "redirect:/todo";
     }
 

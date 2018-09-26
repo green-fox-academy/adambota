@@ -7,22 +7,22 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-    <div class="container-fluid">
-        <h1>Edit Todo</h1>
-        <form method="post" action="/todo/add" th:action="@{'/' + ${id} + '/edit'}">
-            <input type="text" name ="title" th:value="${title}" required>
-            <br>
-            <label for="urgent">Urgent</label>
-            <input type="checkbox" name="urgent" id="urgent" th:checked="${urgent}">
-            <br>
-            <label for="done">Done</label>
-            <input type="checkbox" name="done" id="done" th:checked="${done}">
-            <br>
-            <input type="submit" value="Edit">
-            <a href="/todo">Cancel</a>
-        </form>
-        <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
-        <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-    </div>
+<div class="container-fluid">
+    <h1>Edit Todo</h1>
+    <form method="post" action="/todo/add" th:action="@{'/' + ${id} + '/edit'}">
+        <input type="text" name="title" th:value="${title}" required>
+        <br>
+        <label for="urgent">Urgent</label>
+        <input type="checkbox" name="urgent" id="urgent" th:checked="${urgent}">
+        <br>
+        <label for="done">Done</label>
+        <input type="checkbox" name="done" id="done" th:checked="${done}">
+        <br>
+        <input type="submit" value="Edit">
+        <a href="/todo">Cancel</a>
+    </form>
+    <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</div>
 </body>
 </html>
