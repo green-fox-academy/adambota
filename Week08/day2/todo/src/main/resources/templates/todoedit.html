@@ -2,30 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Edit todo</title>
-    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <meta charset="utf-8"/>
 </head>
 <body>
 <div class="container">
-    <h1 class="jumbotron">Edit Todo</h1>
-    <form method="post" class="form-horizontal" action="/todo/add" th:action="@{'/' + ${id} + '/edit'}">
-        <div class="form-group">
-            <input type="text" name="title" th:value="${title}" required>
+    <h1 class="jumbotron text-center">Edit Todo</h1>
+    <form method="post" class="form-inline" action="/todo/add" th:action="@{'/' + ${id} + '/edit'}">
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <input type="text" class="form-control" name="title" th:value="${title}" required>
+            </div>
+            <div class="col-lg-4 text-center">
+                <label class="control-label" for="urgent">Urgent</label>
+                <input type="checkbox" name="urgent" id="urgent" th:checked="${urgent}">
+            </div>
+            <div class="col-lg-4 text-center">
+                <label class="control-label" for="done">Done</label>
+                <input type="checkbox" name="done" id="done" th:checked="${done}">
+            </div>
         </div>
         <br>
-        <div class="form-group">
-            <label class="control-label" for="urgent">Urgent</label>
-            <input type="checkbox" name="urgent" id="urgent" th:checked="${urgent}">
-        </div>
-        <br>
-        <div class="form-group">
-            <label class="control-label" for="done">Done</label>
-            <input type="checkbox" name="done" id="done" th:checked="${done}">
-        </div>
-        <br>
-        <div class="form-group">
-            <input type="submit" class="btn btn-success" value="Edit">
-            <a href="/todo" role="button" class="btn btn-info">Cancel</a>
+        <div class="row text-center">
+        <input type="submit" class="btn btn-success" value="Edit">
+        <a href="/todo" role="button" class="btn btn-info">Cancel</a>
         </div>
     </form>
 </div>
