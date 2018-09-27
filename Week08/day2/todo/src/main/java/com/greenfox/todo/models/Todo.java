@@ -14,6 +14,7 @@ public class Todo {
     private String title;
     private boolean urgent = false;
     private boolean done = false;
+    //private Assignee assignee;
 
     public Todo(String title) {
         this.title = title;
@@ -54,6 +55,14 @@ public class Todo {
         this.done = done;
     }
 
+    /*public Assignee getAssignee() {
+        return assignee;
+    }*/
+
+    /*public void setAssignee(Assignee assignee) {
+        this.assignee = assignee;
+    }*/
+
     @Override
     public String toString() {
         return "Todo{" +
@@ -61,6 +70,7 @@ public class Todo {
                 ", title='" + title + '\'' +
                 ", urgent=" + urgent +
                 ", done=" + done +
+                ", assignee=" + //assignee +
                 '}';
     }
 }
