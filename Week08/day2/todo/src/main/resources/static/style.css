@@ -1,5 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif !important;
+    background-image: url("https://thumbs.gfycat.com/SnappyAliveJackrabbit-size_restricted.gif");
+    background-size: cover;
 }
 
 thead {
@@ -20,4 +22,10 @@ button{
     border-right:0;
     box-shadow:0 0 0;
     border-color:#ccc;
+}
+
+.jumbotron {
+    background: none !important;
+    font-weight: bold !important;
+    font-size: 45px !important;
 }
