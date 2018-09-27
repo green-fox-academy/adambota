@@ -13,3 +13,11 @@ table, th, td {
     font-size: 16px;
     vertical-align: middle !important;
 }
+
+button{
+    border:0 !important;
+    background:transparent !important;
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+}
