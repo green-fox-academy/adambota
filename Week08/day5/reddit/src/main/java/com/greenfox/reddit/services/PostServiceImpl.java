@@ -23,4 +23,22 @@ public class PostServiceImpl implements PostService {
         Post post = new Post(title, url);
         postRepository.save(post);
     }
+
+    @Override
+    public void upvote(Long id) {
+        if (postRepository.findById(id).isPresent()) {
+            Post post = postRepository.findById(id).get();
+            post.setScore(post.getScore() + 1);
+            postRepository.save(post);
+        }
+    }
+
+    @Override
+    public void downvote(Long id) {
+        if (postRepository.findById(id).isPresent()) {
+            Post post = postRepository.findById(id).get();
+            post.setScore(post.getScore() - 1);
+            postRepository.save(post);
+        }
+    }
 }

@@ -11,8 +11,16 @@
 <table>
     <tr th:each="post : ${posts}">
         <td th:text="${post.score}"></td>
-        <td>+</td>
-        <td>-</td>
+        <td>
+            <form th:action="@{|/upvote/${post.id}|}" method="post">
+                <button type="submit">+</button>
+            </form>
+        </td>
+        <td>
+            <form th:action="@{|/downvote/${post.id}|}" method="post">
+                <button type="submit">-</button>
+            </form>
+        </td>
         <td>
             <a th:href="${post.url}" th:text="${post.title}" target="_blank"></a>
         </td>
