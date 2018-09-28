@@ -19,6 +19,11 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    public Iterable<Post> findAllByOrderByScoreDesc() {
+        return postRepository.findAllByOrderByScoreDesc();
+    }
+
+    @Override
     public void savePost(String title, String url) {
         Post post = new Post(title, url);
         postRepository.save(post);

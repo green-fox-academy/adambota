@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.Clock;
+import java.time.LocalDateTime;
 
 @Entity
 public class Post {
@@ -14,15 +16,18 @@ public class Post {
     private String title;
     private String url;
     private long score;
+    private LocalDateTime time;
 
     public Post(String title, String url) {
         this.title = title;
         this.url = url;
         this.score = 0;
+        this.time = LocalDateTime.now(Clock.systemUTC());
     }
 
     public Post() {
         this.score = 0;
+        this.time = LocalDateTime.now(Clock.systemUTC());
     }
 
     public long getId() {
@@ -55,5 +60,13 @@ public class Post {
 
     public void setScore(long score) {
         this.score = score;
+    }
+
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalDateTime time) {
+        this.time = time;
     }
 }

@@ -6,6 +6,8 @@ public interface PostService {
 
     Iterable<Post> findAll();
 
+    Iterable<Post>  findAllByOrderByScoreDesc();
+
     void savePost(String title, String url);
 
     void upvote(Long id);
