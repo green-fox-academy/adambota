@@ -17,4 +17,10 @@ public class PostServiceImpl implements PostService {
     public Iterable<Post> findAll() {
         return postRepository.findAll();
     }
+
+    @Override
+    public void savePost(String title, String url) {
+        Post post = new Post(title, url);
+        postRepository.save(post);
+    }
 }

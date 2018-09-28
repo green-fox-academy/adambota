@@ -6,10 +6,17 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<ul>
-    <a th:each="post : ${posts}" th:href="${post.url}" target="_blank">
-        <li th:text="${post.title}"></li>
-    </a>
-</ul>
+<h2><a href="/submit">Add new post</a></h2>
+<h1>Trending posts</h1>
+<table>
+    <tr th:each="post : ${posts}">
+        <td th:text="${post.score}"></td>
+        <td>+</td>
+        <td>-</td>
+        <td>
+            <a th:href="${post.url}" th:text="${post.title}" target="_blank"></a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
