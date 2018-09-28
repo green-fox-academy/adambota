@@ -18,9 +18,11 @@ public class Post {
     public Post(String title, String url) {
         this.title = title;
         this.url = url;
+        this.score = 0;
     }
 
     public Post() {
+        this.score = 0;
     }
 
     public long getId() {

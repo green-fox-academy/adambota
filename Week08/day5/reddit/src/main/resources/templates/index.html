@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reddit</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<ul>
+    <a th:each="post : ${posts}" th:href="${post.url}" target="_blank">
+        <li th:text="${post.title}"></li>
+    </a>
+</ul>
+</body>
+</html>
