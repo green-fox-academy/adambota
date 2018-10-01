@@ -2,6 +2,7 @@ package com.greenfox.frontend.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -58,6 +59,23 @@ public class MainController {
 
         public Greeting(String error) {
             this.error = error;
+        }
+    }
+
+    //
+
+    @GetMapping("/appenda/{appendable}")
+    @ResponseBody
+    public Appended appending(@PathVariable String appendable) {
+        if (appendable != null) return new Appended(appendable);
+        return null;
+    }
+
+    static class Appended {
+        public String appended;
+
+        public Appended(String appendable) {
+            appended = appendable + "a";
         }
     }
 }
