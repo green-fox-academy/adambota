@@ -1,10 +1,7 @@
 package com.greenfox.frontend.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
@@ -76,6 +73,44 @@ public class MainController {
 
         public Appended(String appendable) {
             appended = appendable + "a";
+        }
+    }
+
+    //
+
+    @PostMapping("/dountil/{action}")
+    @ResponseBody
+    public Dountil dountil(@PathVariable String action, @RequestBody(required = false) DountilInput input) {
+        if (action.equals("sum") && input != null) {
+            int sum = 0;
+            for (int i = 0; i <= input.until; i++) {
+                sum += i;
+            }
+            return new Dountil(sum);
+        } else if (action.equals("factor") && input != null) {
+            int factorial = 1;
+            for (int i = 1; i <= input.until; i++) {
+                factorial *= i;
+            }
+            return new Dountil(factorial);
+        }
+        return new Dountil("Error");
+    }
+
+    static class DountilInput {
+        public int until;
+    }
+
+    static class Dountil {
+        public int result;
+        public String error;
+
+        public Dountil(int result) {
+            this.result = result;
+        }
+
+        public Dountil(String error) {
+            this.error = error;
         }
     }
 }
