@@ -113,4 +113,51 @@ public class MainController {
             this.error = error;
         }
     }
+
+    //
+
+    @PostMapping("/arrays")
+    @ResponseBody
+    public ArrayOutput arrayCalculator(@RequestBody ArrayInput input) {
+        if (input != null) {
+            if (input.what.equals("sum")) {
+                int[] result = new int[1];
+                for (int i = 0; i < input.numbers.length; i++) {
+                    result[0] += input.numbers[i];
+                }
+                return new ArrayOutput(result);
+            } else if (input.what.equals("multiply")) {
+                int[] result = new int[1];
+                result[0] = 1;
+                for (int i = 0; i < input.numbers.length; i++) {
+                    result[0] *= input.numbers[i];
+                }
+                return new ArrayOutput(result);
+            } else if (input.what.equals("double")) {
+                for (int i = 0; i < input.numbers.length; i++) {
+                    input.numbers[i] *= 2;
+                }
+                return new ArrayOutput(input.numbers);
+            }
+        }
+        return new ArrayOutput("Error");
+    }
+
+    static class ArrayInput {
+        public String what;
+        public int[] numbers;
+    }
+
+    static class ArrayOutput {
+        public String error;
+        public int[] result;
+
+        public ArrayOutput(String error) {
+            this.error = error;
+        }
+
+        public ArrayOutput(int[] result) {
+            this.result = result;
+        }
+    }
 }
