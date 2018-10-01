@@ -15,9 +15,18 @@ public class MainController {
 
     //
 
+    @GetMapping("/doubling")
+    @ResponseBody
+    public Doubled doubling(@RequestParam(required = false) Integer input) {
+        if (input == null) return new Doubled("Error");
+        return new Doubled(input, input * 2);
+    }
+
     static class Doubled {
+
         public int received;
         public int result;
+
         public String error;
 
         public Doubled(int received, int result) {
@@ -30,12 +39,25 @@ public class MainController {
         }
     }
 
-    @GetMapping("/doubling")
+    //
+
+    @GetMapping("/greeter")
     @ResponseBody
-    public Doubled doubling(@RequestParam(required = false) Integer input) {
-        if (input == null) return new Doubled("Error");
-        return new Doubled(input, input * 2);
+    public Greeting greeting(@RequestParam(required = false) String name, @RequestParam(required = false) String title) {
+        if (name == null || title == null) return new Greeting("Error");
+        return new Greeting(name, title);
     }
 
-    //
+    static class Greeting {
+        public String welcome_message;
+        public String error;
+
+        public Greeting(String name, String title) {
+            welcome_message = "Oh, hi there " + name + ", my dear " + title;
+        }
+
+        public Greeting(String error) {
+            this.error = error;
+        }
+    }
 }
