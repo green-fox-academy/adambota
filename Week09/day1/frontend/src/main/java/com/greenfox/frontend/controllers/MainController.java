@@ -119,7 +119,7 @@ public class MainController {
     @PostMapping("/arrays")
     @ResponseBody
     public ArrayOutput arrayCalculator(@RequestBody ArrayInput input) {
-        if (input != null) {
+        if (input != null && input.numbers != null && input.what != null) {
             if (input.what.equals("sum")) {
                 int[] result = new int[1];
                 for (int i = 0; i < input.numbers.length; i++) {
