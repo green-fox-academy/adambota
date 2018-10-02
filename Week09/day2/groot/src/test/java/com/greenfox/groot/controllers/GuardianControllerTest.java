@@ -45,4 +45,36 @@ public class GuardianControllerTest {
                 .andExpect(content().contentType(contentType))
                 .andExpect(jsonPath("$.error", is("I am Groot!")));
     }
+
+    //
+
+    @Test
+    public void yondusArrow_withParameters() throws Exception {
+        mockMvc.perform(get("/yondu")
+                .contentType(MediaType.APPLICATION_JSON)
+                .param("distance", "100.0")
+                .param("time", "10.0"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(contentType))
+                .andExpect(jsonPath("$.speed", is(10.0)));
+    }
+
+    @Test
+    public void yondusArrow_withoutParameters() throws Exception {
+        mockMvc.perform(get("/yondu")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(contentType))
+                .andExpect(jsonPath("$.error", is("Distance and Time missing")));
+    }
+
+    @Test
+    public void yondusArrow_withOneParameter() throws Exception {
+        mockMvc.perform(get("/yondu")
+                .contentType(MediaType.APPLICATION_JSON)
+                .param("distance", "100.0"))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().contentType(contentType))
+                .andExpect(jsonPath("$.error", is("Time missing")));
+    }
 }
